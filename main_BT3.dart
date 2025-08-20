@@ -111,7 +111,7 @@ void hienThiSanPham(List<Map<String, dynamic>> gioHang) {
 void xoaSanPham(List<Map<String, dynamic>> gioHang) {
   hienThiSanPham(gioHang);
   stdout.write('Bạn muốn xóa sản phẩm số mấy? ');
-  int input = int.tryParse(stdin.readLineSync() ?? '') ?? 0;
+  int input = int.parse(stdin.readLineSync() ?? '');
   int index = input - 1;
   if (index >= 0 && index < gioHang.length) {
     gioHang.removeAt(index);
@@ -138,11 +138,11 @@ void suaSanPham(List<Map<String, dynamic>> gioHang) {
   if (index >= 0 && index < gioHang.length) {
     // Thay đổi số lượng mới
     stdout.write('Hãy nhập số lượng mới: ');
-    int soLuongMoi = int.tryParse(stdin.readLineSync() ?? '') ?? 0;
+    int soLuongMoi = int.parse(stdin.readLineSync() ?? '');
     gioHang[index]['soLuong'] = soLuongMoi;
     //Thay đổi giá tiền mới
     stdout.write('Hãy nhập giá tiền mới: ');
-    double giaTienMoi = double.tryParse(stdin.readLineSync() ?? '') ?? 0;
+    double giaTienMoi = double.parse(stdin.readLineSync() ?? '');
     gioHang[index]['giaTien'] = giaTienMoi;
     print(
       'Thay đổi thông tin sản phẩm thành công: ${gioHang[index]['tenSanPham']} -  ${gioHang[index]['soLuong']} - ${gioHang[index]['giaTien']}',
