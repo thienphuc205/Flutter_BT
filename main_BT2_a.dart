@@ -81,7 +81,7 @@ class QuanLySinhVien {
   // Thêm sinh viên
   void themSinhVien() {
     stdout.write('Nhập họ tên: ');
-    String ten = stdin.readLineSync() ?? 'Sinh viên chưa nhập họ tên';
+    String ten = stdin.readLineSync() ?? '';
 
     stdout.write('Nhập điểm toán: ');
     double toan = double.parse(stdin.readLineSync() ?? "0");
